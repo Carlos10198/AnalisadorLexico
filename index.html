@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,75 @@
     <link rel="stylesheet" href="styles/root.css">
     <title>Analisador Léxico</title>
 </head>
+
 <body>
+
+    <header>
+        <nav>
+            <h1>Analisador Léxico</h1>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="intructions">
+            <h2>Modo de Uso</h2>
+            <ol>
+                <li>Selecione a opção "Alfabeto".</li>
+                <li>Digite no campo de texto "Entrada" a sua sentença para o alfabeto.</li>
+                <li>Selecione o botão "Adicionar".</li>
+                <li>Selecione a opção "Tokens".</li>
+                <li>Digite no campo de texto "Entrada" a sua sentença para a validação.<span> OBS: Para cada "Espaço" a
+                        sua sequência será validada e apresentada na tabela.</span></li>
+            </ol>
+            <h3>Observações</h3>
+            <label>Caso o usuário queira trocar a sentença do alfabeto é só clicar no botão <span>"Excluir" e refazer os
+                    passos da explicação <span>"Modo de Uso"</span>.</span></label>
+        </div>
+
+        <main>
+            <section class="program">
+                <form>
+                    <div class="radios">
+                        <label>
+                            <input type="radio" name="type" id="alphabet" value="Alfabeto">
+                            Alfabeto
+                        </label>
+                        <label>
+                            <input type="radio" name="type" id="tokens" value="Tokens">
+                            Tokens
+                        </label>
+                    </div>
+
+                    <div class="inputs-line">
+                        <div class="text-input">
+                            <label for="input">Entrada:</label>
+                            <input type="text" id="input">
+                            <input type="button" id="btAdd" value="ADICIONAR">
+                        </div>
+
+                        <div class="alphabet-group">
+                            <label>Alfabeto:</label>
+                            <input type="text" disabled="true" id="txAlphabet">
+                            <button id="btDelete">
+                                <img src="./assets/images/lixeira.png" alt="Adicionar" class="btn-icon"></button>
+                        </div>
+                    </div>
+                </form>
+
+                <table id="tableResult">
+                    <thead>
+                        <tr id="headerRow"></tr>
+                    </thead>
+                </table>
+                <tbody></tbody>
+            </section>
+        </main>
+        <footer>
+            <p>
+                Trabalho desenvolvido por Carlos Eduardo Bueno e João Carlos Jakaboski para a matéria de linguagens
+                formais. Turma CC2023.
+            </p>
+        </footer>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

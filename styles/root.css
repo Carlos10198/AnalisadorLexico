@@ -1,3 +1,19 @@
 :root{
+    --font-medium: 'fontRedHatMedium', sans-serif;
+    --font-bold: 'fontRedHatBold', sans-serif;
+    --font-black: 'fontRedHatBlack', sans-serif;
     
+    --color-grey: #e3e2e6;
+    --color-nav: #fdfdfd;
+    --color-program: #fafafa;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-bt-add: #cae9c6;
+
+    --space-10: 10px;
+    --space-20: 20px;
+    --space-50: 50px;
+    
+    --font-size-base: 20px;
+    --font-size-title: 30px;
 }

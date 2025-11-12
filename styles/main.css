@@ -1,0 +1,171 @@
+nav{
+    font-family: var(--font-black);
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-nav);
+    padding: var(--space-10);
+    box-shadow: 1px 1px 10px #ddd;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--font-medium);
+    gap: var(--space-50);
+    padding-top: 80px;
+}
+
+.intructions{
+    background-color: var(--color-grey);
+    border-radius: var(--space-20);
+    padding: var(--space-50);
+    box-shadow: 4px 4px 10px black;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    font-size: var(--font-size-base);
+    margin-top: var(--space-50);
+}
+
+.intructions h2{
+    font-size: var(--font-size-title);
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+}
+
+.program {
+    background-color: var(--color-program);
+    border-radius: var(--space-20);
+    padding: var(--space-50);
+    box-shadow: 4px 4px 10px black;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-30);
+    font-size: var(--font-size-base);
+}
+
+.intructions,
+.program {
+    width: 1500px;
+}
+
+.radios {
+    display: flex;
+    gap: var(--space-20);
+}
+
+.radios label{
+    cursor: pointer;
+}
+
+.inputs-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-20);
+    flex-wrap: wrap;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  cursor: pointer;
+  gap: var(--space-10);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+}
+
+input[type="text"] {
+    padding: 8px 1px;
+    border-radius: var(--space-10);
+    border: 1px solid #ccc;
+    font-size: var(--font-size-base);
+}
+
+input[type="button"] {
+    padding: 10px 10px;
+    border: none;
+    border-radius: var(--space-10);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 1px 1px 10px #ddd;
+}
+
+.alphabet-group{
+    display: flex;
+    align-items: center;
+    gap: var(--space-10);
+}
+
+img{
+    width: 35px;
+    height: 35px;
+}
+
+#btAdd {
+    background-color: var(--color-grey);
+}
+#btAdd:hover {
+    background-color: var(--color-nav);
+}
+
+#btDelete {
+    border: none;
+    background-color: var(--color-program);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btDelete:hover {
+     transform: translateY(-2px);
+}
+
+#tableResult {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-20);
+    font-family: var(--font-medium);
+    text-align: center;
+}
+
+#tableResult th,
+#tableResult td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+footer{
+    font-family: var(--font-bold);
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-nav);
+    box-shadow: 1px 1px 10px #ddd;
+    width: 100%;
+    padding: var(--space-20);
+    margin-top: auto;
+}
