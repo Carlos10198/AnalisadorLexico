@@ -19,7 +19,7 @@
         </nav>
     </header>
     <div class="container">
-        <div class="intructions">
+        <div class="instrucoes">
             <h2>Modo de Uso</h2>
             <ol>
                 <li>Selecione a opção "Alfabeto".</li>
@@ -35,41 +35,77 @@
         </div>
 
         <main>
-            <section class="program">
+            <section class="programa">
                 <form>
-                    <div class="radios">
+                    <div class="opcoes-radio">
                         <label>
-                            <input type="radio" name="type" id="alphabet" value="Alfabeto">
+                            <input type="radio" name="tipo" id="radioAlfabeto" value="Alfabeto">
                             Alfabeto
                         </label>
                         <label>
-                            <input type="radio" name="type" id="tokens" value="Tokens">
+                            <input type="radio" name="tipo" id="radioTokens" value="Tokens">
                             Tokens
                         </label>
                     </div>
 
-                    <div class="inputs-line">
-                        <div class="text-input">
-                            <label for="input">Entrada:</label>
-                            <input type="text" id="input">
-                            <input type="button" id="btAdd" value="ADICIONAR">
+                    <div class="linha-entradas">
+                        <div class="entrada-texto">
+                            <label for="campoEntrada">Entrada:</label>
+                            <input type="text" id="campoEntrada">
+                            <input type="button" id="botaoAdicionar" value="ADICIONAR">
                         </div>
 
-                        <div class="alphabet-group">
+                        <div class="grupo-alfabeto">
                             <label>Alfabeto:</label>
-                            <input type="text" disabled="true" id="txAlphabet">
-                            <button id="btDelete">
-                                <img src="./assets/images/lixeira.png" alt="Adicionar" class="btn-icon"></button>
+                            <input type="text" disabled="true" id="campoAlfabeto">
+                            <button type="button" id="botaoExcluir">
+                                <img src="./assets/images/lixeira.png" alt="Excluir" class="icone-botao">
+                            </button>
                         </div>
                     </div>
                 </form>
 
-                <table id="tableResult">
-                    <thead>
-                        <tr id="headerRow"></tr>
-                    </thead>
-                </table>
-                <tbody></tbody>
+                <!-- Área de resultados -->
+                <div id="areaResultado">
+                    <!-- Seção de informações -->
+                    <div class="secao-info" style="display: none;">
+                        <div class="barra-info-mesclada">
+                            <div class="linha-info">
+                                <strong>Alfabeto:</strong> 
+                                <span id="exibicaoAlfabeto"></span>
+                            </div>
+                            <div class="linha-info">
+                                <strong>Token atual:</strong> 
+                                <span id="exibicaoTokenAtual"></span>
+                            </div>
+                            <div class="linha-info">
+                                <strong>Estado atual:</strong> 
+                                <span id="exibicaoEstadoAtual">q0</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Área de status -->
+                        <div class="exibicao-status" id="areaStatus"></div>
+                    </div>
+
+                    <!-- Título da matriz -->
+                    <h3 id="tituloMatriz" style="display: none; margin: 20px 0 10px 0;">
+                        Matriz de Transições do Autômato
+                    </h3>
+
+                    <!-- Wrapper da tabela -->
+                    <div class="container-tabela" style="display: none;">
+                        <table class="matriz-transicao" id="tabelaTransicao">
+                            <thead>
+                                <tr id="cabecalhoMatriz">
+                                    <th class="cabecalho-estado">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="corpoMatriz">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
         </main>
         <footer>
