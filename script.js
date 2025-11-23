@@ -48,7 +48,7 @@ function configurarEventos() {
     });
     
     elementos.campoEntrada.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' && !elementos.radioTokens.checked) {
             e.preventDefault();
             manipularAdicionar();
         }
