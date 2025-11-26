@@ -109,6 +109,7 @@ input[type="text"] {
     border-radius: var(--space-10);
     border: 1px solid #ccc;
     font-size: var(--font-size-base);
+    padding: 5px 10px;
 }
 
 input[type="button"] {
