@@ -87,12 +87,53 @@ function manipularAdicionar() {
     }
 
     if (elementos.radioAlfabeto.checked) {
-        if (!/^[a-z]+$/.test(valor)) {
-            alert('O alfabeto deve conter apenas letras minúsculas de a-z.');
-            return;
+        // Separa palavras por espaço
+        const palavras = valor.split(' ').filter(p => p.length > 0);
+        
+        // Valida todas as palavras
+        for (let palavra of palavras) {
+            if (!/^[a-z]+$/.test(palavra)) {
+                alert(`A palavra "${palavra}" contém caracteres inválidos. Use apenas letras minúsculas de a-z.`);
+                return;
+            }
         }
         
-        adicionarPalavra(valor);
+        // Adiciona todas as palavras válidas
+        let palavrasAdicionadas = [];
+        let palavrasDuplicadas = [];
+        
+        for (let palavra of palavras) {
+            if (!alfabetoUsuario.includes(palavra)) {
+                alfabetoUsuario.push(palavra);
+                palavrasAdicionadas.push(palavra);
+            } else {
+                palavrasDuplicadas.push(palavra);
+            }
+        }
+        
+        if (palavrasAdicionadas.length > 0) {
+            elementos.campoAlfabeto.value = alfabetoUsuario.join(', ');
+            
+            construirAutomato();
+            desenharMatrizTransicao();
+            
+            elementos.exibicaoAlfabeto.textContent = alfabetoUsuario.join(', ');
+            
+            let mensagem = palavrasAdicionadas.length === 1 
+                ? `Palavra "${palavrasAdicionadas[0]}" adicionada!`
+                : `${palavrasAdicionadas.length} palavras adicionadas: ${palavrasAdicionadas.join(', ')}`;
+            
+            if (palavrasDuplicadas.length > 0) {
+                mensagem += `\n\nJá existentes (ignoradas): ${palavrasDuplicadas.join(', ')}`;
+            }
+            
+            mensagem += `\n\nTotal de palavras no alfabeto: ${alfabetoUsuario.length}\nAgora selecione "Tokens" para validar.`;
+            
+            alert(mensagem);
+        } else {
+            alert('Todas as palavras já estão no alfabeto.');
+        }
+        
         elementos.campoEntrada.value = '';
     } else if (elementos.radioTokens.checked) {
         if (alfabetoUsuario.length === 0) {
@@ -132,23 +173,6 @@ function manipularExcluir() {
     
     elementos.radioAlfabeto.checked = false;
     elementos.radioTokens.checked = false;
-}
-
-function adicionarPalavra(palavra) {
-    if (!alfabetoUsuario.includes(palavra)) {
-        alfabetoUsuario.push(palavra);
-        
-        elementos.campoAlfabeto.value = alfabetoUsuario.join(', ');
-        
-        construirAutomato();
-        desenharMatrizTransicao();
-        
-        elementos.exibicaoAlfabeto.textContent = alfabetoUsuario.join(', ');
-        
-        alert(`Palavra "${palavra}" adicionada!\nTotal de palavras: ${alfabetoUsuario.length}\nAgora selecione "Tokens" para validar.`);
-    } else {
-        alert(`A palavra "${palavra}" já está no alfabeto.`);
-    }
 }
 
 function construirAutomato() {
