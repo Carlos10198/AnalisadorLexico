@@ -65,8 +65,7 @@ ol {
 
 .instrucoes,
 .programa {
-    min-width: 1500px;
-    width: auto;
+    width: 1100px;
 }
 
 .opcoes-radio {
